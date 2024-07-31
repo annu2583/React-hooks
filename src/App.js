@@ -1,25 +1,19 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import { createContext, useContext } from 'react';
 import './App.css';
+import ChildA from './components/ChildA';
 
-function App() {
+const App=()=> {
+  const dataFirst = createContext()
+  console.log(dataFirst);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    <dataFirst.Provider value={"Hey am here"}>
+    <ChildA/>
+    </dataFirst.Provider>
+    </>
+  )
 }
 
 export default App;
+export {dataFirst};
